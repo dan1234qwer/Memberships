@@ -1,8 +1,10 @@
 ﻿using System.Data.Entity;
+using System.Security.AccessControl;
 using System.Security.Claims;
 using System.Threading.Tasks;
 using Microsoft.AspNet.Identity;
 using Microsoft.AspNet.Identity.EntityFramework;
+using Memberships.Entities;
 
 namespace Memberships.Models
 {
@@ -29,5 +31,15 @@ namespace Memberships.Models
         {
             return new ApplicationDbContext();
         }
+
+        public DbSet<Section> Sections { get; set; }
+
+        public DbSet<Part> Parts { get; set; }
+
+        public DbSet<ItemType> ItemTypes { get; set; }
+
+        public DbSet<Item> Items { get; set; }
+
+        public DbSet<Product> Products { get; set; }
     }
 }
